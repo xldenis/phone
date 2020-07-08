@@ -1,0 +1,20 @@
+<! DOCTYPE html>
+<html>
+  <head>
+    <title>Phonebooth</title>
+  </head>
+  <body>
+    <video src="/videos/jai-froid.mp4" id="myvideo" width="320" height="240" playsinline style="background:black"> </video>
+    <script>
+      let videos = [
+        './videos/faucheuse.mp4'
+        ];
+
+      let url = videos[Math.floor(Math.random() * videos.length)];
+      let video = document.getElementById('myvideo');
+      video.src = url;
+      video.play();
+
+    </script>
+  </body>
+</html>
