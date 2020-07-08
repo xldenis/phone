@@ -10,21 +10,46 @@
         justify-content: center;
         height:100%;
       }
+
+      .play-button {
+        font-size: 1rem;
+        font-style: small-caps;
+        color: white;
+
+      }
+      .overlay {
+        background: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right:0;
+        bottom: 0;
+      }
     </style>
   </head>
   <body>
+    <div class="container overlay">
+      <span class="play-button">PLAY</span>
+    </div>
     <div class="container">
-    <video src="/videos/jai-froid.mp4" id="myvideo" width="640" height="480" playsinline controls style="background:black"> </video>
+    <video src="" id="myvideo" width="640" height="480" playsinline style="background:black"> </video>
     </div>
     <script>
       let videos = [
-        './videos/faucheuse.mp4'
+        './videos/faucheuse.mp4',
+        // rajouter comme:
+        // './videos/ma-video.mp4',
         ];
 
       let url = videos[Math.floor(Math.random() * videos.length)];
       let video = document.getElementById('myvideo');
       video.src = url;
-      video.play();
+      document.querySelector(".play-button").addEventListener('click', function () {
+        console.log("clicked!");
+        let overlay = document.querySelector(".overlay");
+        overlay.style.display = 'none';
+        video.play();
+      });
 
     </script>
   </body>
