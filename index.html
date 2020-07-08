@@ -2,9 +2,19 @@
 <html>
   <head>
     <title>Phonebooth</title>
+    <style>
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:100%;
+      }
+    </style>
   </head>
   <body>
-    <video src="/videos/jai-froid.mp4" id="myvideo" width="320" height="240" playsinline style="background:black"> </video>
+    <div class="container">
+    <video src="/videos/jai-froid.mp4" id="myvideo" width="640" height="480" playsinline controls style="background:black"> </video>
+    </div>
     <script>
       let videos = [
         './videos/faucheuse.mp4'
